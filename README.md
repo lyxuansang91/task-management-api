@@ -63,13 +63,17 @@ or
 yarn build && node dist/main
 ```
 
-1. **Access the application**: Open your browser and navigate to http://localhost:3000.
+1. **Access the application**: Open your browser and navigate to `http://localhost:3000`.
 
 ## Environment Variables
 
 The application uses the following environment variables:
 
-MONGO_URI: The URI for connecting to MongoDB. Default is `mongodb://mongo:27017/test`.
+MONGODB_URI: The URI for connecting to MongoDB. Default is `mongodb://mongo:27017/test`.
+NODE_ENV: The NodeJS environment for app. Default is `development`.
+PORT: The port of this app. Default is `3000`.
+SECRET_KEY: The secret key for JWT token.
+SIGN_OPTIONS: JWT token sign expire time, default: `4h`.
 
 ## Running the Application
 
