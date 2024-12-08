@@ -9,7 +9,6 @@ services:
       - "3000:3000"
     environment:
       MONGODB_URI: mongodb://mongo:27017/task-management-api
-      DEBUG: true
       NODE_ENV: development
       PORT: 3000
       SECRET_KEY: secret-key
