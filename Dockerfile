@@ -1,4 +1,4 @@
-FROM node:16-alpine as builder
+FROM node:20-alpine as builder
 
 ENV NODE_ENV build
 
@@ -6,15 +6,14 @@ USER node
 WORKDIR /home/node
 
 COPY package*.json ./
-RUN npm ci
+RUN yarn install
 
 COPY --chown=node:node . .
-RUN npm run build \
-    && npm prune --production
+RUN yarn build && yarn install --production
 
 # ---
 
-FROM node:16-alpine
+FROM node:20-alpine
 
 ENV NODE_ENV production
 
