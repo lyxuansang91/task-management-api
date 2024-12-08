@@ -24,7 +24,6 @@ export class AuthService {
     role: string
   ): Promise<UserDocument> {
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log("hash password: ", hashedPassword);
     const user = new this.userModel({
       name,
       email,
